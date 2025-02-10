@@ -4,9 +4,5 @@
 * {
   font-family: 'Poppins';
   scrollbar-width: none;
-}
-
-.hero {
-  position: relative;
-  overflow: hidden;
+  user-select: none;
 }
