@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from 'react'
+import React from 'react'
 
 const skills = [
   { name: 'HTML', color: 'from-orange-500 to-red-500' },

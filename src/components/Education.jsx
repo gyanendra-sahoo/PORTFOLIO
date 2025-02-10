@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const education = [
   {
@@ -22,10 +22,9 @@ const education = [
     details: 'Built a strong foundation in Science and Mathematics.',
     color: 'from-green-500 to-teal-500'
   }
-]
+];
 
 const Education = () => {
-
   return (
     <div id='education' className="h-screen flex flex-col items-center justify-center text-white px-6 gap-20">
       <h2 className="text-5xl font-bold mb-10 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
@@ -45,7 +44,7 @@ const Education = () => {
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Education
+export default Education;
