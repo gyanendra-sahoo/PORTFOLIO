@@ -3,7 +3,7 @@ import React from 'react'
 const About = () => {
   return (
     <div id='about' className='h-screen flex justify-center items-center bg-black'>
-      <div className='flex flex-col justify-center items-center gap-10 px-6 sm:px-12 md:px-24'>
+      <div className='flex flex-col justify-center items-center gap-10 sm:px-6 sm:px-12 md:px-24'>
         <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text text-center'>
           About My Journey
         </h1>
