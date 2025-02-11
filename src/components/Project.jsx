@@ -27,21 +27,21 @@ const Project = () => {
     },
   ];
 
-  const boxRefs = useRef([]);
+  const cardRefs = useRef([]);
 
   useEffect(() => {
-    boxRefs.current.forEach((box) => {
+    cardRefs.current.forEach((card) => {
       gsap.fromTo(
-        box, 
+        card, 
         { y: 100, opacity: 0 }, 
         {
           y: 0, 
           opacity: 1,
           scrollTrigger: {
-            trigger: box,
+            trigger: card,
             scroller: 'body',
-            start: 'top 70%',
-            end: 'top 40%',
+            start: 'top 80%',
+            end: 'top 50%',
             scrub: 2,
           }
         }
@@ -49,28 +49,59 @@ const Project = () => {
     });
   }, []);
 
+  const handleMouseMove = (e, index) => {
+    const card = cardRefs.current[index];
+    const { left, top, width, height } = card.getBoundingClientRect();
+    const x = e.clientX - left - width / 1;
+    const y = e.clientY - top - height / 1;
+    
+    gsap.to(card, {
+      rotationY: (x / width) * 20,
+      rotationX: -(y / height) * 20,
+      transformPerspective: 1000,
+      ease: "power2.out",
+      duration: 0.3
+    });
+  };
+
+  const handleMouseLeave = (index) => {
+    gsap.to(cardRefs.current[index], {
+      rotationY: 0,
+      rotationX: 0,
+      ease: "power2.out",
+      duration: 0.5
+    });
+  };
+
   return (
-    <div id='projects' className='p-10 h-screen flex flex-col justify-center items-center'>
-      <h2 className='text-5xl font-bold text-center mb-20 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text'>
+    <div id='projects' className='sm:p-10 min-h-screen flex flex-col justify-center items-center'>
+      <h2 className='text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-20 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text'>
         My Creativity On Web Development
       </h2>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10'>
         {projects.map((project, index) => (
           <div
             key={index}
-            ref={(el) => boxRefs.current[index] = el} // Assign each box's ref
-            className="border border-gray-300 rounded-lg p-5 shadow-lg"
+            ref={(el) => (cardRefs.current[index] = el)} 
+            className="border border-gray-300 rounded-lg p-5 shadow-lg relative transition-transform transform hover:scale-105"
+            onMouseMove={(e) => handleMouseMove(e, index)}
+            onMouseLeave={() => handleMouseLeave(index)}
+            style={{
+              transformStyle: 'preserve-3d',
+              perspective: '1000px'
+            }}
           >
             <img
               src={project.imageLink}
               alt={project.name}
-              className="w-full h-48 object-cover rounded-lg"
+              className="w-full h-48 sm:h-56 lg:h-64 object-cover rounded-2xl p-1"
+              style={{ transform: 'translateZ(50px)' }}
             />
-            <h3 className='text-xl text-white font-semibold mt-4'>{project.name}</h3>
-            <p className='text-[#A1A1A1] text-sm mt-2'>{project.description}</p>
+            <h3 className='text-xl sm:text-2xl text-white font-semibold mt-4'>{project.name}</h3>
+            <p className='text-[#A1A1A1] text-sm sm:text-base mt-2'>{project.description}</p>
             <div className='flex flex-wrap gap-2 mt-2'>
               {project.technology.split(',').map((tech, i) => (
-                <span key={i} className='text-white font-medium cursor-pointer bg-[#202024] text-sm px-2 py-1 rounded'>
+                <span key={i} className='text-white font-medium cursor-pointer bg-[#202024] text-sm sm:text-base px-2 py-1 rounded'>
                   {tech.trim()}
                 </span>
               ))}

@@ -1,14 +1,14 @@
-import React from 'react'
-import Hero from '../components/Hero'
-import About from '../components/About'
-import Project from '../components/Project'
-import Skill from '../components/Skill'
-import Education from '../components/Education'
-import Contact from '../components/Contact'
+import React from 'react';
+import Hero from '../components/Hero';
+import About from '../components/About';
+import Project from '../components/Project';
+import Skill from '../components/Skill';
+import Education from '../components/Education';
+import Contact from '../components/Contact';
 
 const Home = () => {
   return (
-    <div className='w-full px-[10%] bg-black'>
+    <div className='w-full px-6 sm:px-[10%] bg-black'>
       <Hero />
       <About />
       <Project />
@@ -16,7 +16,7 @@ const Home = () => {
       <Education />
       <Contact />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

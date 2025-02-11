@@ -1,4 +1,3 @@
-
 import React from 'react'
 
 const skills = [
@@ -19,11 +18,11 @@ const skills = [
 const Skill = () => {
 
   return (
-    <div id='skills' className="h-screen flex flex-col items-center justify-center text-white gap-40">
-      <h2 className="text-5xl font-bold mb-10 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
+    <div id='skills' className="h-screen flex flex-col items-center justify-center text-white gap-20 sm:gap-32 md:gap-40">
+      <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-10 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
         My Skills
       </h2>
-      <div className="grid grid-cols-2 md:grid-cols-6 gap-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
         {skills.map((skill, index) => (
           <div
             key={index}
@@ -37,4 +36,4 @@ const Skill = () => {
   )
 }
 
-export default Skill
+export default Skill;

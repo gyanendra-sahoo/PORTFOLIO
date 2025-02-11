@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -15,7 +15,7 @@ const Footer = () => {
     <footer className="bg-[#111] text-gray-400 py-10 px-5">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="flex flex-col items-center md:items-start">
-          <h2 className="text-white text-2xl font-bold">Gyanendra</h2>
+          <h2 className="text-white text-2xl font-bold">Gyanendra Sahoo</h2>
           <p className="mt-2 text-sm text-gray-500">Building innovative web solutions for a better future.</p>
         </div>
         <div className="flex flex-col items-center md:items-start">
@@ -53,6 +53,7 @@ const Footer = () => {
             <Link to="/twitter" className="text-gray-400 hover:text-white text-xl"><FaTwitter /></Link>
             <Link to="https://www.instagram.com/urfav_gyana/" className="text-gray-400 hover:text-white text-xl"><FaInstagram /></Link>
             <Link to="https://www.linkedin.com/in/gyanendrasahoo" className="text-gray-400 hover:text-white text-xl"><FaLinkedin /></Link>
+            <Link to="https://github.com/gyanendra-sahoo" className="text-gray-400 hover:text-white text-xl"><FaGithub /></Link>
           </div>
         </div>
       </div>
