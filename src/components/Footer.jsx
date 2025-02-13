@@ -23,7 +23,7 @@ const Footer = () => {
           <ul className="mt-3 space-y-2">
           <li className="hover:text-blue-500"
             onClick={() => scrollToSection('hero')}
-            >Home</li>
+            >Hero</li>
             <li className="hover:text-blue-500"
             onClick={() => scrollToSection('about')}
             >About</li>

@@ -1,9 +1,11 @@
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
-import React from 'react'
+import React, { useState } from 'react'
 import { FaDownload } from 'react-icons/fa'
+import { CirclesWithBar } from 'react-loader-spinner'
 
 const Hero = () => {
+  const [isLoading, setIsLoading] = useState(false)
 
   useGSAP(() => {
     gsap.from('#hero-content', {
@@ -12,6 +14,17 @@ const Hero = () => {
       duration: 0.8
     })
   })
+
+  const handleDownload = () => {
+    setIsLoading(true)
+    setTimeout(() => {
+      const link = document.createElement('a')
+      link.href = '/Gyanendra-Sahoo-Resume.pdf'
+      link.download = 'resume.pdf'
+      link.click()
+      setIsLoading(false)
+    }, 2000)
+  }
 
   return (
     <div id='hero' className="lg:h-screen flex justify-center items-center bg-black">
@@ -25,9 +38,24 @@ const Hero = () => {
         <h2 className='text-[#A1A1A1] text-lg sm:text-xl md:text-2xl text-center'>
           innovative solutions
         </h2>
-        <button className='bg-gradient-to-r from-gray-500 to-gray-600 text-base sm:text-lg px-4 py-2 rounded-lg font-semibold mt-8 cursor-pointer flex items-center gap-2 text-gray-300'>
-          <FaDownload /> Download Resume
-        </button>
+        
+        {isLoading ? (
+          <CirclesWithBar
+            height="50"
+            width="50"
+            color="#A1A1A1"
+            ariaLabel="loading"
+            wrapperStyle={{}}
+            wrapperClass=""
+          />
+        ) : (
+          <button
+            className='bg-gradient-to-r from-gray-500 to-gray-600 text-base sm:text-lg px-4 py-2 rounded-lg font-semibold mt-8 cursor-pointer flex items-center gap-2 text-gray-300'
+            onClick={handleDownload}
+          >
+            <FaDownload /> Download Resume
+          </button>
+        )}
       </div>
     </div>
   )
