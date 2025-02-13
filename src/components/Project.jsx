@@ -75,7 +75,7 @@ const Project = () => {
 
   return (
     <div id='projects' className='sm:p-10 min-h-screen flex flex-col justify-center items-center'>
-      <h2 className='text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-20 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text'>
+      <h2 className='text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-20 heading'>
         My Creativity On Web Development
       </h2>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10'>
@@ -94,14 +94,14 @@ const Project = () => {
             <img
               src={project.imageLink}
               alt={project.name}
-              className="w-full h-48 sm:h-56 lg:h-64 object-cover rounded-2xl p-1"
+              className="w-full h-48 sm:h-54 lg:h-64 object-cover rounded-2xl p-1"
               style={{ transform: 'translateZ(50px)' }}
             />
-            <h3 className='text-xl sm:text-2xl text-white font-semibold mt-4'>{project.name}</h3>
+            <h3 className='text-xl sm:text-2xl text-gray-400 font-semibold mt-4'>{project.name}</h3>
             <p className='text-[#A1A1A1] text-sm sm:text-base mt-2'>{project.description}</p>
             <div className='flex flex-wrap gap-2 mt-2'>
               {project.technology.split(',').map((tech, i) => (
-                <span key={i} className='text-white font-medium cursor-pointer bg-[#202024] text-sm sm:text-base px-2 py-1 rounded'>
+                <span key={i} className='text-gray-300 font-medium cursor-pointer bg-[#202024] text-sm sm:text-base px-2 py-1 rounded'>
                   {tech.trim()}
                 </span>
               ))}

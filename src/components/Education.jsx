@@ -1,50 +1,104 @@
-import React from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/all';
+import React, { useEffect, useRef } from 'react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const education = [
   {
-    degree: 'B.Tech in Computer Science & Engineering',
-    institution: 'GIET UNIVERSITY, Gunupur, Odisha',
-    year: '2022 - 2026',
-    details: 'Studying advanced topics in programming, data structures, algorithms, and AI.',
-    color: 'black'
+    degree: "B.Tech in Computer Science & Engineering",
+    institution: "GIET UNIVERSITY, Gunupur, Odisha",
+    year: "2022 - 2026",
+    details: "Studying advanced topics in programming, data structures, algorithms, and AI."
   },
   {
-    degree: 'Higher Secondary Education',
-    institution: 'Christ College, Cuttack, Odisha',
-    year: '2020 - 2022',
-    details: 'Focused on Mathematics, Physics, and Computer Science as core subjects.',
-    color: 'black'
+    degree: "Higher Secondary Education",
+    institution: "Christ College, Cuttack, Odisha",
+    year: "2020 - 2022",
+    details: "Focused on Mathematics, Physics, and Computer Science as core subjects."
   },
   {
-    degree: 'Secondary Education',
-    institution: 'Kalakala Nodal High School, Salapada, Jajpur',
-    year: 'Passing Year - 2020',
-    details: 'Built a strong foundation in Science and Mathematics.',
-    color: 'black'
+    degree: "Secondary Education",
+    institution: "Kalakala Nodal High School, Salapada, Jajpur",
+    year: "Passing Year - 2020",
+    details: "Built a strong foundation in Science and Mathematics."
   }
 ];
 
 const Education = () => {
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    cardRefs.current.forEach((card) => {
+      gsap.fromTo(
+        card,
+        { y: 100, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          scrollTrigger: {
+            trigger: card,
+            scroller: 'body',
+            start: 'top 80%',
+            end: 'top 50%',
+            scrub: 2,
+          }
+        }
+      );
+    });
+  }, []);
+
+  const handleMouseMove = (e, index) => {
+    const card = cardRefs.current[index];
+    const { left, top, width, height } = card.getBoundingClientRect();
+    const x = e.clientX - left - width / 1;
+    const y = e.clientY - top - height / 1;
+    
+    gsap.to(card, {
+      rotationY: (x / width) * 25,
+      rotationX: -(y / height) * 25,
+      transformPerspective: 1000,
+      ease: "power2.out",
+      duration: 0.3
+    });
+  };
+
+  const handleMouseLeave = (index) => {
+    gsap.to(cardRefs.current[index], {
+      rotationY: 0,
+      rotationX: 0,
+      ease: "power2.out",
+      duration: 0.5
+    });
+  };
+
   return (
-    <div id='education' className="h-auto sm:h-screen flex flex-col items-center justify-center text-white sm:px-6 gap-16 sm:gap-20">
-      <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-10 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text">
-        Education
+    <div id='education' className='sm:p-10 min-h-screen flex flex-col justify-center items-center'>
+      <h2 className='text-4xl sm:text-5xl lg:text-6xl font-bold text-center mb-20 heading'>
+        My Education Journey
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12">
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10'>
         {education.map((edu, index) => (
           <div
             key={index}
-            className={`bg-gradient-to-r ${edu.color} p-6 rounded-lg shadow-xl w-80 sm:w-[300px] lg:w-[320px] text-center transform transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-4 border-gray-900`}
+            ref={(el) => (cardRefs.current[index] = el)}
+            className="border border-gray-300 rounded-lg p-5 shadow-lg relative transition-transform transform hover:scale-105"
+            onMouseMove={(e) => handleMouseMove(e, index)}
+            onMouseLeave={() => handleMouseLeave(index)}
+            style={{
+              transformStyle: 'preserve-3d',
+              perspective: '1000px'
+            }}
           >
-            <h3 className="text-xl sm:text-2xl font-semibold">{edu.degree}</h3>
-            <p className="text-lg opacity-80 mt-2">{edu.institution}</p>
-            <p className="text-md opacity-60">{edu.year}</p>
-            <p className="text-sm mt-4 opacity-90">{edu.details}</p>
+            <h3 className='text-xl sm:text-2xl text-white font-semibold mt-4'>{edu.degree}</h3>
+            <p className='text-[#A1A1A1] text-sm sm:text-base mt-2'>{edu.institution}</p>
+            <p className='text-md text-white opacity-60'>{edu.year}</p>
+            <p className='text-sm mt-4 text-white opacity-90'>{edu.details}</p>
           </div>
         ))}
       </div>
     </div>
   );
-};
+}
 
 export default Education;
