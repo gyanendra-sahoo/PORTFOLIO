@@ -46,7 +46,7 @@ const ContactSection = () => {
   return (
     <section
       id="contact"
-      className="py-20 px-6 sm:px-12 md:px-20 lg:px-24 relative bg-secondary/30"
+      className="py-20 sm:px-12 md:px-20 lg:px-24 relative bg-secondary/30"
     >
       <div className="container mx-auto max-w-6xl">
         {/* Heading */}
@@ -71,12 +71,12 @@ const ContactSection = () => {
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium">Email</h4>
+                  <h4 className="font-medium text-start">Email</h4>
                   <a
-                    href="mailto:hello@gmail.com"
+                    href="mailto:gyanendrasahoo577@gmail.com"
                     className="text-muted-foreground hover:text-primary transition-colors break-words"
                   >
-                    hello@gmail.com
+                    gyanendrasahoo577@gmail.com
                   </a>
                 </div>
               </div>
@@ -87,7 +87,7 @@ const ContactSection = () => {
                   <Phone className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium">Phone</h4>
+                  <h4 className="font-medium text-start">Phone</h4>
                   <a
                     href="tel:+917849007882"
                     className="text-muted-foreground hover:text-primary transition-colors"
@@ -103,7 +103,7 @@ const ContactSection = () => {
                   <Map className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <h4 className="font-medium">Location</h4>
+                  <h4 className="font-medium text-start">Location</h4>
                   <p className="text-muted-foreground">Odisha, Rayagada, Gunupur</p>
                 </div>
               </div>
@@ -113,7 +113,7 @@ const ContactSection = () => {
             <div className="pt-8">
               <h4 className="font-medium mb-4">Connect With Me</h4>
               <div className="flex space-x-4 justify-center md:justify-start">
-                <a href="#" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
+                <a href="https://www.linkedin.com/in/gyanendrasahoo" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
                   <Linkedin />
                 </a>
                 <a href="#" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">

@@ -14,7 +14,7 @@ const ThemeToggle = () => {
       document.documentElement.classList.remove("dark");
       setIsDarkMode(false);
     }
-  });
+  }, []);
 
   const toggleTheme = () => {
     if (isDarkMode) {
@@ -27,15 +27,16 @@ const ThemeToggle = () => {
       setIsDarkMode(true);
     }
   };
+
   return (
     <button
       onClick={toggleTheme}
       className={cn(
-        "fixed max-sm:hidden top-5 right-5 z-50 p-2 rounded-full transition-colors duration-300",
-        "focused:outline-hidden"
+        "fixed top-5 right-24 sm:right-8 md:right-6 z-50 p-2 rounded-full transition-all duration-300 bg-foreground/10 hover:bg-foreground/20",
+        "backdrop-blur-md shadow-md border border-foreground/10"
       )}
+      aria-label="Toggle theme"
     >
-      {" "}
       {isDarkMode ? (
         <Sun className="h-6 w-6 text-yellow-300" />
       ) : (

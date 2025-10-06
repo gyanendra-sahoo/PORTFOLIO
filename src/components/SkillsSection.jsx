@@ -13,7 +13,7 @@ const skills = [
   { name: "MySQL", level: 75, category: "backend" },
 
   { name: "Git/GitHub", level: 85, category: "tools" },
-  { name: "Docker", level: 70, category: "tools" },
+  { name: "Docker", level: 30, category: "tools" },
   { name: "VS Code", level: 90, category: "tools" },
 ];
 
@@ -29,7 +29,7 @@ const SkillsSection = () => {
   return (
     <section
       id="skills"
-      className="py-20 px-6 sm:px-12 md:px-20 lg:px-24 relative bg-secondary/30"
+      className="py-20 sm:px-12 md:px-20 lg:px-24 relative bg-secondary/30"
     >
       <div className="container mx-auto max-w-6xl">
         {/* Heading */}

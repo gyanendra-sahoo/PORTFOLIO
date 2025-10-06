@@ -1,16 +1,30 @@
-# React + Vite
+# Gyanendra Sahoo | Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to my personal portfolio! This website showcases my skills, projects, and ways to get in touch with me. It is built using modern web technologies and designed to be responsive, clean, and user-friendly.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Demo
 
-## React Compiler
+Check out my portfolio live [here](https://gyanendra-sahoo.vercel.app)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 💻 Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Frontend:** React, Tailwind CSS
+- **Icons & UI:** Lucide React, CSS Animations
+- **Email Integration:** EmailJS
+- **Hosting:** Vercel
+
+---
+
+## ✨ Features
+
+- **Responsive Design:** Works perfectly on desktop, tablet, and mobile screens.
+- **Smooth Navigation:** Sticky navbar with blur effect for a professional look.
+- **Projects Showcase:** Highlights featured projects with demo links and GitHub repos.
+- **Contact Form:** Sends messages directly to my email using EmailJS (no backend required).
+- **Social Links:** Quick access to LinkedIn, Twitter, Facebook, and Instagram.
+
+---

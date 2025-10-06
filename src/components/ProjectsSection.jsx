@@ -12,33 +12,13 @@ const projects = [
     demoUrl: "https://prime-track.vercel.app/login",
     githubUrl: "https://github.com/gyanendra-sahoo/PROJECT-MANAGER",
   },
-  {
-    id: 2,
-    title: "Hospital Finder Platform",
-    description:
-      "A web application to locate nearby hospitals, view doctor details, and get live directions using Map APIs. Built for better healthcare accessibility.",
-    image: "/projects/project-2.png",
-    tags: ["React", "Node.js", "Express", "MongoDB", "Leaflet.js"],
-    demoUrl: "https://your-demo-link.com",
-    githubUrl: "https://github.com/gyanendra-sahoo/Hospital-Project",
-  },
-  {
-    id: 3,
-    title: "Portfolio Website",
-    description:
-      "A modern, responsive portfolio website showcasing projects, skills, and experience. Designed with smooth animations and optimized performance.",
-    image: "/projects/project-3.png",
-    tags: ["React", "Tailwind CSS", "Framer Motion"],
-    demoUrl: "https://gyanendra-portfolio.vercel.app",
-    githubUrl: "https://github.com/gyanendra-sahoo/Portfolio",
-  },
 ];
 
 const ProjectsSection = () => {
   return (
     <section
       id="projects"
-      className="py-20 px-6 sm:px-12 md:px-20 lg:px-24 relative"
+      className="py-20 sm:px-12 md:px-20 lg:px-24 relative"
     >
       <div className="container mx-auto max-w-6xl">
         {/* Heading */}
